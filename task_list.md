@@ -1,9 +1,9 @@
 # 작업 목록: Shotgun Metagenomics Pipeline
 
 ## 초기 설정
-- [ ] Git 저장소 초기화 및 원격 저장소 푸시 (`git init`, `git remote add ...`, `git push`)
-- [ ] Nextflow 설치 확인 또는 설치
-- [ ] Docker 설치 확인 또는 설치
+- [x] Git 저장소 초기화 및 원격 저장소 푸시 (`git init`, `git remote add ...`, `git push`)
+- [x] Nextflow 설치 확인 또는 설치
+- [x] Docker 설치 확인 또는 설치
 
 ## 파이프라인 구현
 - [ ] nf-core/bagobugs 파이프라인 통합 (`>= 2.4.0`)
