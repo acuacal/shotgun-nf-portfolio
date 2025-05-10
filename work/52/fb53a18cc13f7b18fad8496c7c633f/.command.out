@@ -1,0 +1,6 @@
+Running nf-core/bagobugs...
+
+ N E X T F L O W   ~  version 24.10.6
+
+Pulling nf-core/bagobugs ...
+WARN: Cannot read project manifest -- Cause: Remote resource not found: https://api.github.com/repos/nf-core/bagobugs/contents/nextflow.config

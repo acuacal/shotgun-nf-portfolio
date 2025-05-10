@@ -4,7 +4,7 @@
 nextflow.enable.dsl=2
 
 // Define parameters
-params.input = '''https://raw.githubusercontent.com/nf-core/test-datasets/modules/data/delete_me/microbiome/illumina_PE_ERR123456_subset.csv''' // Path to samplesheet.csv, e.g., 'samplesheet.csv'
+params.input = 'assets/samplesheet_paired_end_gg200.csv' // Path to samplesheet.csv, e.g., 'samplesheet.csv'
 params.outdir = 'results' // This will be the main outdir for the meta-pipeline
 params.multiqc_title = "Shotgun Metagenomics Portfolio Pipeline"
 

@@ -1,0 +1,3 @@
+sample,fastq_1,fastq_2,fasta
+GG200_CTRL_RUN1,https://github.com/nf-core/test-datasets/raw/mag/test_data/paired_end_gg200/GG200_CTRL_RUN1_R1.fastq.gz,https://github.com/nf-core/test-datasets/raw/mag/test_data/paired_end_gg200/GG200_CTRL_RUN1_R2.fastq.gz,
+GG200_TRE_RUN1,https://github.com/nf-core/test-datasets/raw/mag/test_data/paired_end_gg200/GG200_TRE_RUN1_R1.fastq.gz,https://github.com/nf-core/test-datasets/raw/mag/test_data/paired_end_gg200/GG200_TRE_RUN1_R2.fastq.gz, 

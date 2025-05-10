@@ -8,3 +8,4 @@
 2025-05-10 22:28:28	-	determined_gutenberg	-	5df71f65789789ad2dd4d632cf9bbfc7	62efcb7d-fd86-4ec5-a892-47390ae32f97	nextflow run main.nf -profile docker -resume
 2025-05-10 22:29:59	1.3s	marvelous_poincare	OK	05a61b439598bfe16b39c61c10a34c70	62efcb7d-fd86-4ec5-a892-47390ae32f97	nextflow run main.nf -profile docker -resume
 2025-05-10 22:42:25	24.3s	naughty_galileo	ERR	595f5e9e88afdc8fb7f103cde4b5e5b4	81dfd3bb-2f89-4476-a99d-f9161f3209de	nextflow run main.nf -profile docker
+2025-05-10 23:15:36	4.3s	nasty_lagrange	ERR	7c26af57d10e766edf26beb35471f3c2	81dfd3bb-2f89-4476-a99d-f9161f3209de	nextflow run main.nf -profile docker -resume
