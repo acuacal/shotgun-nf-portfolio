@@ -8,10 +8,10 @@
 ## 🔨 Implementation tasks
 - [ ] Install Docker Desktop & enable WSL integration
 - [ ] Download mini databases to `~/metadb/`
-- [ ] Add `conf/hybrid.config` for AWS Batch
-- [ ] Verify `nextflow config -profile hybrid` merges correctly
+- [x] Add `conf/hybrid.config` for AWS Batch
+- [x] Verify `nextflow config -profile hybrid` merges correctly
 - [ ] Capture MultiQC & Krona screenshots
-- [ ] Add Makefile targets (setup, demo, ci)
+- [x] Add Makefile targets (setup, demo, ci)
 
 ## ✅ Definition of done
 - [ ] Pipeline passes locally (`make run …` returns 0)
@@ -30,12 +30,10 @@
     - Given `scripts/run_nf.sh` is intended to handle sequential execution of nf-core pipelines, simplify `main.nf`.
     - The goal is to make `main.nf` a very basic Nextflow script, primarily for `nextflow info .` or as a placeholder if it evolves into a true meta-pipeline later.
     - This might involve removing or commenting out complex workflow/process blocks in `main.nf` that might conflict with `scripts/run_nf.sh`'s role.
-- [ ] **Re-run the pipeline**:
-    - After applying fixes, re-run with `make run slug=fix-initial-params args="-profile docker -resume"` (using a new slug).
+- [x] **Re-run the pipeline**:
 
 ## 🔴 Bug-fixes (20250510-fix-initial-params)
-- [ ] **Correct Syntax in `main.nf`**:
+- [x] **Correct Syntax in `main.nf`**:
     - Modify `main.nf` at line 90 to remove the erroneous backslashes before the triple quotes in the `log.info` block.
     - Change `log.info \"\"\"` back to `log.info """`.
-- [ ] **Re-run the pipeline**:
-    - After applying the fix, re-run with `make run slug=fix-syntax-error args="-profile docker -resume"` (using a new slug).
+- [x] **Re-run the pipeline**:

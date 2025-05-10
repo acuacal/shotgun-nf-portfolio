@@ -5,91 +5,72 @@ nextflow.enable.dsl=2
 
 // Define parameters
 params.input = '''https://raw.githubusercontent.com/nf-core/test-datasets/modules/data/delete_me/microbiome/illumina_PE_ERR123456_subset.csv''' // Path to samplesheet.csv, e.g., 'samplesheet.csv'
-params.outdir = 'results'
+params.outdir = 'results' // This will be the main outdir for the meta-pipeline
 params.multiqc_title = "Shotgun Metagenomics Portfolio Pipeline"
 
-/*
-// Include nf-core modules/subworkflows if this were a custom pipeline from scratch
-// For now, we are chaining two full nf-core pipelines.
+// Define sub-pipeline output directories
+params.bagobugs_outdir = "${params.outdir}/bagobugs_results"
+params.funcscan_outdir = "${params.outdir}/funcscan_results"
+
 
 workflow {
-    // Channel for input samplesheet
-    ch_input = Channel.fromPath(params.input)
+    ch_input_samplesheet = Channel.fromPath(params.input)
 
     // 1. Run nf-core/bagobugs
-    BAGOBUGS ( ch_input ) // Assuming bagobugs can take a samplesheet channel directly
+    BAGOBUGS ( ch_input_samplesheet )
 
     // 2. Run nf-core/funcscan using output from bagobugs
-    // We need to define how to get the correct input for funcscan from bagobugs' output
-    // This is a simplified representation. Actual connection will be more complex.
-    // For example, funcscan might need paths to QC'd reads or assemblies.
-    FUNCSCAN ( BAGOBUGS.out.cleaned_reads ) // Placeholder for actual output channel
-
-    // 3. (Optional) hAMRonization is typically part of funcscan or run after it.
-    // If funcscan itself produces the hAMRonization summary, we don't need a separate step.
-    // Otherwise, we'd call it here using funcscan's ARG outputs.
-
-    // 4. MultiQC will be run by Nextflow automatically if `multiqc` module is present
-    // or by the nf-core pipelines themselves.
+    FUNCSCAN ( BAGOBUGS.out.bagobugs_results_path )
 }
 
-// Subworkflow/process definitions for BAGOBUGS and FUNCSCAN
-// These would typically be `include { BAGOBUGS } from 'nf-core/bagobugs/main.nf'` if using as modules
-// But here we are trying to invoke them as full pipeline runs. This approach is non-standard.
-
-// A more standard nf-core way to chain pipelines is often manual or via helper scripts,
-// or by developing a new pipeline that IMPORTS modules/subworkflows from existing ones.
-
-// For now, let's assume scripts/run_nf.sh handles the sequential execution
-// and this main.nf might be a conceptual placeholder or used for a more integrated setup later.
-
-// Placeholder for BAGOBUGS process (conceptual)
+// Process to run nf-core/bagobugs
 process BAGOBUGS {
+    tag "bagobugs_on_${params.input.split('/')[-1]}"
+
     input:
     path samplesheet
 
     output:
-    // Define expected outputs, e.g., path "cleaned_reads/*" into cleaned_reads
-    path "results_bagobugs" // Placeholder
+    path params.bagobugs_outdir, emit: bagobugs_results_path
 
     script:
     """
+    echo "Running nf-core/bagobugs..."
+    mkdir -p ${params.bagobugs_outdir} 
+    
     nextflow run nf-core/bagobugs \
         --input ${samplesheet} \
-        --outdir results_bagobugs \
-        ${params.profile ? "-profile ${params.profile}" : ""} \
-        // Add other bagobugs specific parameters here
-        --metaphlan_db '~/metadb/mpa_vJan21_CHOCOPhlAnSGB_202103' \
-        --humann_db '~/metadb/humann_db/'
+        --outdir ${params.bagobugs_outdir} \
+        -profile test,${workflow.profile} \
+        -resume 
     """
 }
 
-// Placeholder for FUNCSCAN process (conceptual)
+// Process to run nf-core/funcscan
 process FUNCSCAN {
+    tag "funcscan_after_bagobugs"
+
     input:
-    path cleaned_reads_dir // Placeholder for input from bagobugs
+    path предыдущий_output_dir // Placeholder, will be bagobugs_output_dir from BAGOBUGS.out.bagobugs_results_path
 
     output:
-    path "results_funcscan"
+    path params.funcscan_outdir, emit: funcscan_results_path
 
     script:
-    // Funcscan needs a samplesheet or direct input paths.
-    // If taking reads, we'd need to create a samplesheet for it from bagobugs output.
+    // The input 'предыдущий_output_dir' corresponds to 'bagobugs_output_dir' from the workflow.
     """
-    echo "Funcscan would run here with input from ${cleaned_reads_dir}" 
-    // This is highly simplified. A real implementation needs to create a samplesheet for funcscan
-    // or pass arguments for --reads, --contigs etc.
-    // nextflow run nf-core/funcscan \
-    //    --input <funcscan_samplesheet> \
-    //    --outdir results_funcscan \
-    //    ${params.profile ? "-profile ${params.profile}" : ""} \
-    //    // Add other funcscan specific parameters
-    mkdir results_funcscan // Create dummy output for now
+    echo "Running nf-core/funcscan on outputs from ${предыдущий_output_dir}..."
+    mkdir -p ${params.funcscan_outdir}
+
+    nextflow run nf-core/funcscan \
+        --input ${предыдущий_output_dir} \
+        --outdir ${params.funcscan_outdir} \
+        -profile test,${workflow.profile} \
+        -resume
     """
 }
-*/
 
-log.info \"\"\"
+log.info """
          S H O T G U N  M E T A G E N O M I C S     P I P E L I N E
          ===========================================================
          Input Samplesheet: ${params.input}
@@ -97,4 +78,4 @@ log.info \"\"\"
          Profile          : ${workflow.profile ?: 'none'}
 
          See docs/README.md for more information.
-\"\"\".stripIndent() 
+""" 
