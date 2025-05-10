@@ -24,9 +24,14 @@ and referenced with `@` in this chat.
      - `[ ]` Re-run the pipeline with `-resume`.  
    - Put the file next to `root_cause.md` inside the same `_debug/…` folder.
 
-4. **Append New Tasks to Main `task_list.md`**  
-   - Add a new subsection **“🔴 Bug-fixes”** (create if absent).  
-   - Copy the checklist items from `fix_plan.md` under that section.
+4. **Regenerate `task_list.md`**
+   1. Load the current `task_list.md`.
+   2. Mark any steps already completed during this debug session as checked.
+   3. Remove or rewrite items that are no longer valid.
+   4. Merge the checklist items from `fix_plan.md`
+      into the appropriate sections (🚀 Quick-start, 🔨 Implementation tasks,
+      or create a new 🔧 “Fixes in progress” if they don’t fit).
+   5. Overwrite the original `task_list.md` with the updated content.
 
 5. **Version-Control**  
    Run the helper script to snapshot this debug session:  
