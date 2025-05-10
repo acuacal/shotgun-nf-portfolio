@@ -1,7 +1,7 @@
 # task_list.md
 
 ## 🚀 Quick-start run commands
-- [ ] Run pipeline via `make run slug=initial-test args="-profile docker"`
+- [x] Run pipeline via `make run slug=initial-test args="-profile docker"`
   > After each bug-fix, rerun with  
   > `make run slug=<new-slug> args="-profile docker -resume"`
 

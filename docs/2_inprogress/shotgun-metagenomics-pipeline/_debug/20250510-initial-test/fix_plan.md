@@ -5,7 +5,7 @@ Based on the `task_list.md` and `root_cause.md`, the following steps will be tak
 - [ ] **Initialize `params.input` in `main.nf`**:
     - Modify `main.nf` to provide a valid default for `params.input`.
     - For initial testing, use a relevant nf-core test samplesheet, for example:
-      `params.input = 'https://raw.githubusercontent.com/nf-core/test-datasets/modules/data/delete_me/microbiome/illumina_PE_ERR123456_subset.csv'` (or a similar test samplesheet suitable for bagobugs/funcscan if this one is not appropriate).
+      `params.input = '''https://raw.githubusercontent.com/nf-core/test-datasets/modules/data/delete_me/microbiome/illumina_PE_ERR123456_subset.csv'''`
 
 - [ ] **Handle Profile Information Correctly in `main.nf`**:
     - For the `log.info` block in `main.nf`, change `params.profile ?: 'none'` to `workflow.profile ?: 'none'` to correctly display active profile(s).

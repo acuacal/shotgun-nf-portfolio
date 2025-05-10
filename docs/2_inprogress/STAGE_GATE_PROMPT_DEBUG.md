@@ -42,9 +42,11 @@ and referenced with `@` in this chat.
    - Show the contents of root_cause.md.
    - Show the contents of fix_plan.md.
    - Confirm that tasks were appended and commit was pushed.
+   
+7. Continue executing tasks unless told otherwise.
 
-7. **Stop**
-   - Wait for the user to approve or edit fix_plan.md before executing any steps.
+<!-- 7. **Stop**
+   - Wait for the user to approve or edit fix_plan.md before executing any steps. -->
 
 **Notes for Cursor**
    - Use the existing helper script scripts/vc.sh for Git add/commit/push.
