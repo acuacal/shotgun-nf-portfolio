@@ -1,0 +1,51 @@
+# ───────────────────────────────────────
+# 1. Nextflow runtime & temp files
+# ───────────────────────────────────────
+.nextflow/          # cache, plr, assets, history, DB index
+work/               # process work dirs (can be huge)
+.nf*trace*          # execution traces if generated
+.nextflow.log*      # rotating run logs
+
+# ───────────────────────────────────────
+# 2. One-off / big results
+#    (keep small demo outputs if useful)
+# ───────────────────────────────────────
+results*/           # e.g. results_bagobugs_test/
+*.html              # massive MultiQC / Krona reports
+*.png
+*.pdf
+*.zip
+# …or narrow it:
+# !docs/2_inprogress/**/figures/**  # keep a few screenshots if staged
+
+# ───────────────────────────────────────
+# 3. Databases & test data
+# ───────────────────────────────────────
+metadb/             # local kraken2, humann, card, etc.
+data/               # large FASTQ / FASTA
+*.fq.gz
+*.fastq.gz
+*.bam
+*.tar*
+*.gz
+
+# ───────────────────────────────────────
+# 4. Cursor gate-prompt debug artefacts
+#    (keep plans, ignore raw logs)
+# ───────────────────────────────────────
+# keep fix_plan.md & root_cause.md but ignore heavy logs
+docs/**/_debug/**/error_log.txt
+
+# ───────────────────────────────────────
+# 5. IDE / OS noise
+# ───────────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ───────────────────────────────────────
+# 6. Credentials / local config overrides
+# ───────────────────────────────────────
+.env
+conf/local.config

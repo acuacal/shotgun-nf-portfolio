@@ -2,7 +2,7 @@
 
  N E X T F L O W   ~  version 24.10.6
 
-Launching `main.nf` [chaotic_austin] DSL2 - revision: d377a11f4a
+Launching `main.nf` [sharp_chandrasekhar] DSL2 - revision: d377a11f4a
 
 WARN: Access to undefined parameter `profile` -- Initialise it to a default value eg. `params.profile = some_value`
 

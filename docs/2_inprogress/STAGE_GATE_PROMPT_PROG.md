@@ -43,10 +43,8 @@
    - Render the new task_list.md checklist.
    - Confirm commit hash pushed to remote.
 
-6. Wait
-   - Pause for user to prioritise tasks or request automated execution before proceeding further.
+6. Continue executing tasks unless told otherwise.
 
 **Notes for Cursor**
    - Replace {{FEATURE_NAME}} with the actual folder name.
    - make run relies on scripts/run_nf.sh; ensure the command example remains intact.
-   - For Windows + WSL setups, remind the user to test Docker Desktop integration before large DB downloads.
