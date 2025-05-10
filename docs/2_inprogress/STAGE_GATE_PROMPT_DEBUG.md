@@ -15,6 +15,8 @@ and referenced with `@` in this chat.
    Include:  
    - **Root Cause** – concise description.  
    - **Evidence** – log snippets or file paths that prove it.
+   - If the error stems from outdated or conflicting information in
+     `README.md`, `spec.md`, or `design.md`, record that fact and quote the offending snippet.   
 
 3. **Create `fix_plan.md`**  
    - A markdown checklist of concrete steps to resolve the issue.  
@@ -23,6 +25,8 @@ and referenced with `@` in this chat.
      - `[ ]` Update `nextflow.config › params.*` path(s).  
      - `[ ]` Re-run the pipeline with `-resume`.  
    - Put the file next to `root_cause.md` inside the same `_debug/…` folder.
+   - Include code/database fixes **and** any required documentation edits
+     (e.g. update examples, correct paths, revise design rationale).   
 
 4. **Regenerate `task_list.md`**
    1. Load the current `task_list.md`.
@@ -32,6 +36,8 @@ and referenced with `@` in this chat.
       into the appropriate sections (🚀 Quick-start, 🔨 Implementation tasks,
       or create a new 🔧 “Fixes in progress” if they don’t fit).
    5. Overwrite the original `task_list.md` with the updated content.
+   6. Merge fix_plan items into the appropriate sections.
+   7. If documentation needs changes, add a “📚 Docs-fixes” group or place the checklist within “🔨 Implementation tasks”.   
 
 5. **Version-Control**  
    Run the helper script to snapshot this debug session:  
