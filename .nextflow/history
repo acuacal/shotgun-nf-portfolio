@@ -4,3 +4,4 @@
 2025-05-10 21:41:33	-	sharp_chandrasekhar	-	d377a11f4ac22141b168a22462d383f4	09d42690-ce73-4873-a002-50284fc54fac	nextflow run main.nf -profile docker
 2025-05-10 21:52:13	-	elegant_saha	-	d377a11f4ac22141b168a22462d383f4	8521c0d3-a44c-469b-8ec8-467283947684	nextflow run main.nf -profile docker
 2025-05-10 22:07:55	-	golden_allen	-	d377a11f4ac22141b168a22462d383f4	62efcb7d-fd86-4ec5-a892-47390ae32f97	nextflow run main.nf -profile docker
+2025-05-10 22:16:44	-	infallible_kilby	-	5d60541b8d9fea43c4173a4b01b188e8	62efcb7d-fd86-4ec5-a892-47390ae32f97	nextflow run main.nf -profile docker -resume

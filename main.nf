@@ -4,7 +4,7 @@
 nextflow.enable.dsl=2
 
 // Define parameters
-params.input = false // Path to samplesheet.csv, e.g., 'samplesheet.csv'
+params.input = '''https://raw.githubusercontent.com/nf-core/test-datasets/modules/data/delete_me/microbiome/illumina_PE_ERR123456_subset.csv''' // Path to samplesheet.csv, e.g., 'samplesheet.csv'
 params.outdir = 'results'
 params.multiqc_title = "Shotgun Metagenomics Portfolio Pipeline"
 
@@ -87,12 +87,12 @@ process FUNCSCAN {
     """
 }
 
-log.info """
+log.info \"\"\"
          S H O T G U N  M E T A G E N O M I C S     P I P E L I N E
          ===========================================================
          Input Samplesheet: ${params.input}
          Output Directory : ${params.outdir}
-         Profile          : ${params.profile ?: 'none'}
+         Profile          : ${workflow.profile ?: 'none'}
 
          See docs/README.md for more information.
-""".stripIndent() 
+\"\"\".stripIndent() 
