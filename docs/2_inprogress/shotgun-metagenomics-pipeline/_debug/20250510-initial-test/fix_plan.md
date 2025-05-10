@@ -1,13 +1,20 @@
 # Fix Plan for 20250510-initial-test
 
-- [ ] **Initialize `params.input`**: Modify `main.nf` to provide a valid default for `params.input`, such as a path to a test samplesheet or ensure it's always provided via command line. For initial testing, we can use nf-core's built-in test data capabilities if `main.nf` is structured to call nf-core pipelines directly.
-- [ ] **Handle Profile Information Correctly**: 
-    - Remove direct usage of `params.profile` within the conceptual process script blocks in `main.nf` if `scripts/run_nf.sh` is already passing the correct `-profile` argument to the `nextflow run` commands for sub-pipelines. 
-    - If profile-specific logic is needed *within* `main.nf` itself (outside of sub-pipeline calls), use `workflow.profile` or check active profiles using `workflow.profiles.contains('some_profile_name')`.
+Based on the `task_list.md` and `root_cause.md`, the following steps will be taken to address the errors:
+
+- [ ] **Initialize `params.input` in `main.nf`**:
+    - Modify `main.nf` to provide a valid default for `params.input`.
+    - For initial testing, use a relevant nf-core test samplesheet, for example:
+      `params.input = 'https://raw.githubusercontent.com/nf-core/test-datasets/modules/data/delete_me/microbiome/illumina_PE_ERR123456_subset.csv'` (or a similar test samplesheet suitable for bagobugs/funcscan if this one is not appropriate).
+
+- [ ] **Handle Profile Information Correctly in `main.nf`**:
     - For the `log.info` block in `main.nf`, change `params.profile ?: 'none'` to `workflow.profile ?: 'none'` to correctly display active profile(s).
-- [ ] **Refine `main.nf` Structure**: Clarify the role of `main.nf`. If `scripts/run_nf.sh` is intended to be the primary driver that sequentially calls `nextflow run nf-core/bagobugs ...` and then `nextflow run nf-core/funcscan ...`, then `main.nf` as it stands (with its own `workflow` and `process` blocks trying to wrap these calls) might be overly complex or conflicting. 
-    - **Option A (Simplify `main.nf`):** If `scripts/run_nf.sh` handles sequential execution, `main.nf` could be removed or simplified to be a very basic Nextflow script (e.g., for `nextflow info .` purposes or if it were to evolve into a true meta-pipeline).
-    - **Option B (Make `main.nf` the true meta-pipeline):** Properly implement the `BAGOBUGS` and `FUNCSCAN` calls as subworkflows or by using Nextflow's ability to run other Nextflow projects, ensuring correct input/output channeling. This is more complex.
-    - For now, prioritize getting a basic run working, likely by ensuring `params.input` is handled and sub-pipeline calls are clean, potentially simplifying how profiles are passed if `scripts/run_nf.sh` does this effectively.
-- [ ] **Provide Test Input**: For `-profile test` (or an equivalent like the `docker` profile run for `initial-test`), ensure a test samplesheet is used or that nf-core test data is triggered. The `nf-core/bagobugs` pipeline (and `funcscan`) has its own `--input` parameter and test data. The `main.nf` `params.input` should be aligned with this. For example, set `params.input = 'https://raw.githubusercontent.com/nf-core/test-datasets/modules/data/delete_me/microbiome/illumina_PE_ERR123456_subset.csv'` (or a relevant test samplesheet for bagobugs/funcscan).
-- [ ] **Re-run the pipeline**: After applying fixes, re-run with `make run slug=fix-attempt-1 args="-profile docker -resume"` (or similar slug). 
+    - Ensure `scripts/run_nf.sh` is correctly passing the `-profile` argument to sub-pipeline `nextflow run` commands. If so, direct usage of `params.profile` within `main.nf` process script blocks might be unnecessary and can be reviewed/removed to avoid conflicts.
+
+- [ ] **Review and Refine `main.nf` Structure (as per Option A from task_list.md for now)**:
+    - Given `scripts/run_nf.sh` is intended to handle sequential execution of nf-core pipelines, simplify `main.nf`.
+    - The goal is to make `main.nf` a very basic Nextflow script, primarily for `nextflow info .` or as a placeholder if it evolves into a true meta-pipeline later.
+    - This might involve removing or commenting out complex workflow/process blocks in `main.nf` that might conflict with `scripts/run_nf.sh`'s role.
+
+- [ ] **Re-run the pipeline**:
+    - After applying fixes, re-run with `make run slug=fix-initial-params args="-profile docker -resume"` (using a new slug). 

@@ -22,3 +22,18 @@ else
 fi
 
 exit $exit_code
+
+if [[ $exit_code -ne 0 ]]; then
+  # (1) capture metadata of the failed run
+  nf_log="${dbg_dir}/nextflow_meta.log"
+  nextflow log $(nextflow log | tail -1 | awk '{print $1}') > "$nf_log"
+
+  # (2) OPTIONAL: pull last 200 lines of each failed Batch job
+  jq -r '.processes[] | select(.status=="FAILED") | .containerId' "$nf_log" | while read jobid; do
+      aws logs get-log-events \
+          --log-group-name /aws/batch/job \
+          --log-stream-name "${jobid}/default" \
+          --limit 200 \
+          --output text > "${dbg_dir}/cw_${jobid}.txt" || true
+  done
+fi

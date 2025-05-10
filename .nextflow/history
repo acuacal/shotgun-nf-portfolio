@@ -2,3 +2,4 @@
 2025-05-09 17:19:02	-	nostalgic_banach	-	b01a11fc234f2763c0b1c4361e780007a1fac8ac	bebc9e53-3030-40e3-bae7-20f86918062b	nextflow run nibscbioinformatics/nf-core-bagobugs -profile test,docker --outdir ./results_bagobugs_test --metaphlan_database ./db/metaphlan_test_db
 2025-05-10 17:31:25	-	chaotic_austin	-	d377a11f4ac22141b168a22462d383f4	963226bd-be94-4dea-8cfb-f3aa1e3b3181	nextflow run main.nf -profile docker
 2025-05-10 21:41:33	-	sharp_chandrasekhar	-	d377a11f4ac22141b168a22462d383f4	09d42690-ce73-4873-a002-50284fc54fac	nextflow run main.nf -profile docker
+2025-05-10 21:52:13	-	elegant_saha	-	d377a11f4ac22141b168a22462d383f4	8521c0d3-a44c-469b-8ec8-467283947684	nextflow run main.nf -profile docker

@@ -1,138 +1,72 @@
-May-09 17:18:59.521 [main] DEBUG nextflow.cli.Launcher - $> nextflow run nibscbioinformatics/nf-core-bagobugs -profile test,docker --outdir ./results_bagobugs_test --metaphlan_database ./db/metaphlan_test_db
-May-09 17:18:59.707 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.10.6
-May-09 17:18:59.730 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/acuacal/.nextflow/plugins; core-plugins: nf-amazon@2.9.3,nf-azure@1.10.2,nf-cloudcache@0.4.2,nf-codecommit@0.2.2,nf-console@1.1.4,nf-google@1.15.4,nf-tower@1.9.3,nf-wave@1.7.5
-May-09 17:18:59.758 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
-May-09 17:18:59.759 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
-May-09 17:18:59.761 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
-May-09 17:18:59.774 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
-May-09 17:18:59.789 [main] DEBUG nextflow.scm.ProviderConfig - Using SCM config path: /home/acuacal/.nextflow/scm
-May-09 17:19:00.484 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/acuacal/.nextflow/assets/nibscbioinformatics/nf-core-bagobugs/.git/config; branch: null; remote: origin; url: https://github.com/nibscbioinformatics/nf-core-bagobugs.git
-May-09 17:19:00.514 [main] DEBUG nextflow.scm.RepositoryFactory - Found Git repository result: [RepositoryFactory]
-May-09 17:19:00.521 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/acuacal/.nextflow/assets/nibscbioinformatics/nf-core-bagobugs/.git/config; branch: null; remote: origin; url: https://github.com/nibscbioinformatics/nf-core-bagobugs.git
-May-09 17:19:01.588 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /home/acuacal/.nextflow/assets/nibscbioinformatics/nf-core-bagobugs/nextflow.config
-May-09 17:19:01.589 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/acuacal/.nextflow/assets/nibscbioinformatics/nf-core-bagobugs/nextflow.config
-May-09 17:19:01.595 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/acuacal/.nextflow/secrets/store.json
-May-09 17:19:01.597 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@747835f5] - activable => nextflow.secret.LocalSecretsProvider@747835f5
-May-09 17:19:01.608 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `test,docker`
-May-09 17:19:02.558 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [bih, cfc_dev, uzl_omics, ifb_core, embl_hd, denbi_qbic, alice, mjolnir_globe, uppmax, giga, incliva, ilifu, ki_luria, uge, icr_alma, rosalind_uge, lugh, mccleary, unibe_ibu, vai, czbiohub_aws, jax, roslin, ccga_med, tes, scw, unc_longleaf, tigem, tubingen_apg, google, apollo, ipop_up, vsc_calcua, pdc_kth, googlels, ceci_nic5, humantechnopole, stjude, daisybio, eddie, medair, biowulf, bi, bigpurple, adcra, cedars, pawsey_setonix, vsc_kul_uhasselt, pawsey_nimbus, ucl_myriad, utd_ganymede, seattlechildrens, icr_davros, ceres, munin, rosalind, hasta, cfc, uzh, shu_bmrc, ebi_codon_slurm, ebc, ccga_dx, crick, ku_sund_danhead, marvin, biohpc_gen, mana, york_viking, unc_lccc, wehi, awsbatch, wustl_htcf, arcc, ceci_dragon2, imperial, maestro, software_license, cannon, genotoul, nci_gadi, abims, janelia, nu_genomics, googlebatch, oist, sahmri, kaust, alliance_canada, mpcdf, leicester, vsc_ugent, create, sage, cambridge, jex, ebi_codon, cheaha, xanadu, nyu_hpc, test, marjorie, nibsc, computerome, ucd_sonic, seg_globe, mssm, sanger, dkfz, bluebear, pasteur, einstein, ethz_euler, m3c, imb, ucl_cscluster, tuos_stanage, azurebatch, hki, seadragon, crukmi, csiro_petrichor, qmul_apocrita, docker, engaging, gis, hypatia, psmn, eva, unity, cropdiversityhpc, nygc, fgcz, conda, crg, singularity, mpcdf_viper, pe2, self_hosted_runner, tufts, uw_hyak_pedslabs, binac2, debug, genouest, cbe, unsw_katana, phoenix, seawulf, uod_hpc, fub_curta, uct_hpc, aws_tower, binac, fsu_draco]
-May-09 17:19:02.632 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
-May-09 17:19:02.633 [main] DEBUG nextflow.cli.CmdRun - Launching `https://github.com/nibscbioinformatics/nf-core-bagobugs` [nostalgic_banach] DSL2 - revision: b01a11fc23 [main]
-May-09 17:19:02.641 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
-May-09 17:19:02.642 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
-May-09 17:19:02.741 [main] DEBUG nextflow.Session - Session UUID: bebc9e53-3030-40e3-bae7-20f86918062b
-May-09 17:19:02.742 [main] DEBUG nextflow.Session - Run name: nostalgic_banach
-May-09 17:19:02.742 [main] DEBUG nextflow.Session - Executor pool size: 8
-May-09 17:19:02.756 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
-May-09 17:19:02.763 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
-May-09 17:19:02.833 [main] DEBUG nextflow.cli.CmdRun - 
+May-10 17:31:24.343 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -profile docker
+May-10 17:31:24.460 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.10.6
+May-10 17:31:24.483 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/acuacal/.nextflow/plugins; core-plugins: nf-amazon@2.9.3,nf-azure@1.10.2,nf-cloudcache@0.4.2,nf-codecommit@0.2.2,nf-console@1.1.4,nf-google@1.15.4,nf-tower@1.9.3,nf-wave@1.7.5
+May-10 17:31:24.523 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+May-10 17:31:24.524 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+May-10 17:31:24.533 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+May-10 17:31:24.556 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+May-10 17:31:24.583 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/acuacal/project/shotgun-nf-portfolio/nextflow.config
+May-10 17:31:24.587 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/acuacal/project/shotgun-nf-portfolio/nextflow.config
+May-10 17:31:24.638 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/acuacal/.nextflow/secrets/store.json
+May-10 17:31:24.644 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@4b6ac111] - activable => nextflow.secret.LocalSecretsProvider@4b6ac111
+May-10 17:31:24.655 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
+May-10 17:31:25.455 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [hybrid, test, docker]
+May-10 17:31:25.486 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
+May-10 17:31:25.510 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [chaotic_austin] DSL2 - revision: d377a11f4a
+May-10 17:31:25.512 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+May-10 17:31:25.512 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+May-10 17:31:25.630 [main] DEBUG nextflow.Session - Session UUID: 963226bd-be94-4dea-8cfb-f3aa1e3b3181
+May-10 17:31:25.631 [main] DEBUG nextflow.Session - Run name: chaotic_austin
+May-10 17:31:25.632 [main] DEBUG nextflow.Session - Executor pool size: 8
+May-10 17:31:25.662 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+May-10 17:31:25.688 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+May-10 17:31:25.755 [main] DEBUG nextflow.cli.CmdRun - 
   Version: 24.10.6 build 5937
   Created: 23-04-2025 16:53 UTC (24-04-2025 01:53 KDT)
   System: Linux 5.15.153.1-microsoft-standard-WSL2
   Runtime: Groovy 4.0.23 on OpenJDK 64-Bit Server VM 21.0.7+6-Ubuntu-0ubuntu124.04
   Encoding: UTF-8 (UTF-8)
-  Process: 18508@DESKTOP-LT9IGGU [127.0.1.1]
-  CPUs: 8 - Mem: 7.8 GB (5.7 GB) - Swap: 4 GB (4 GB)
-May-09 17:19:02.857 [main] DEBUG nextflow.Session - Work-dir: /home/acuacal/project/shotgun-nf-portfolio/work [ext2/ext3]
-May-09 17:19:02.891 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
-May-09 17:19:02.902 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
-May-09 17:19:02.972 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
-May-09 17:19:02.983 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
-May-09 17:19:03.112 [main] DEBUG nextflow.Session - Session start
-May-09 17:19:03.116 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /home/acuacal/project/shotgun-nf-portfolio/results_bagobugs_test/pipeline_info/execution_trace_2025-05-09_17-19-02.txt
-May-09 17:19:03.123 [main] DEBUG nextflow.Session - Using default localLib path: /home/acuacal/.nextflow/assets/nibscbioinformatics/nf-core-bagobugs/lib
-May-09 17:19:03.129 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/acuacal/.nextflow/assets/nibscbioinformatics/nf-core-bagobugs/lib
-May-09 17:19:03.129 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/acuacal/.nextflow/assets/nibscbioinformatics/nf-core-bagobugs/lib/nfcore_external_java_deps.jar
-May-09 17:19:06.696 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
-May-09 17:19:06.723 [main] INFO  nextflow.Nextflow - 
+  Process: 61887@DESKTOP-LT9IGGU [127.0.1.1]
+  CPUs: 8 - Mem: 7.8 GB (5.8 GB) - Swap: 4 GB (4 GB)
+May-10 17:31:25.831 [main] DEBUG nextflow.Session - Work-dir: /home/acuacal/project/shotgun-nf-portfolio/work [ext2/ext3]
+May-10 17:31:25.833 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/acuacal/project/shotgun-nf-portfolio/bin
+May-10 17:31:25.864 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+May-10 17:31:25.879 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+May-10 17:31:25.911 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+May-10 17:31:25.922 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+May-10 17:31:26.011 [main] DEBUG nextflow.Session - Session start
+May-10 17:31:26.346 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+May-10 17:31:26.379 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `profile` -- Initialise it to a default value eg. `params.profile = some_value`
+May-10 17:31:26.381 [main] INFO  nextflow.Nextflow - 
+S H O T G U N  M E T A G E N O M I C S     P I P E L I N E
+===========================================================
+Input Samplesheet: false
+Output Directory : results
+Profile          : none
 
--[2m----------------------------------------------------[0m-
-                                        [0;32m,--.[0;30m/[0;32m,-.[0m
-[0;34m        ___     __   __   __   ___     [0;32m/,-._.--~'[0m
-[0;34m  |\ | |__  __ /  ` /  \ |__) |__         [0;33m}  {[0m
-[0;34m  | \| |       \__, \__/ |  \ |___     [0;32m\`-._,-`-,[0m
-                                        [0;32m`._,._,'[0m
-[0;35m  nf-core-bagobugs v1.0.0[0m
--[2m----------------------------------------------------[0m-
+See docs/README.md for more information.
 
-May-09 17:19:06.769 [main] INFO  nextflow.Nextflow - [1mCore Nextflow options[0m
-  [0;34mrevision                  : [0;32mmain[0m
-  [0;34mrunName                   : [0;32mnostalgic_banach[0m
-  [0;34mcontainerEngine           : [0;32mdocker[0m
-  [0;34mcontainer                 : [0;32mnfcore/bagobugs:dev[0m
-  [0;34mlaunchDir                 : [0;32m/home/acuacal/project/shotgun-nf-portfolio[0m
-  [0;34mworkDir                   : [0;32m/home/acuacal/project/shotgun-nf-portfolio/work[0m
-  [0;34mprojectDir                : [0;32m/home/acuacal/.nextflow/assets/nibscbioinformatics/nf-core-bagobugs[0m
-  [0;34muserName                  : [0;32macuacal[0m
-  [0;34mprofile                   : [0;32mtest,docker[0m
-  [0;34mconfigFiles               : [0;32m/home/acuacal/.nextflow/assets/nibscbioinformatics/nf-core-bagobugs/nextflow.config[0m
+May-10 17:31:26.398 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_d9efcda044560cc0: /home/acuacal/project/shotgun-nf-portfolio/main.nf
+May-10 17:31:26.399 [main] DEBUG nextflow.Session - Session aborted -- Cause: Missing `fromPath` parameter
+May-10 17:31:26.411 [main] DEBUG nextflow.Session - 
+Thread[#19,Notification Thread,9,system]
 
-[1mInput/output options[0m
-  [0;34minput                     : [0;32mhttps://raw.githubusercontent.com/nibscbioinformatics/testdata/master/meta/shotgun_data/test_data_meta.csv[0m
-  [0;34moutdir                    : [0;32m./results_bagobugs_test[0m
+Thread[#10,Finalizer,8,system]
+  java.base@21.0.7/java.lang.Object.wait0(Native Method)
+  java.base@21.0.7/java.lang.Object.wait(Object.java:366)
+  java.base@21.0.7/java.lang.Object.wait(Object.java:339)
+  java.base@21.0.7/java.lang.ref.NativeReferenceQueue.await(NativeReferenceQueue.java:48)
+  java.base@21.0.7/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:158)
+  java.base@21.0.7/java.lang.ref.NativeReferenceQueue.remove(NativeReferenceQueue.java:89)
+  java.base@21.0.7/java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:173)
 
-[1mMax job request options[0m
-  [0;34mmax_cpus                  : [0;32m2[0m
-  [0;34mmax_memory                : [0;32m6 GB[0m
-  [0;34mmax_time                  : [0;32m2d[0m
-
-[1mInstitutional config options[0m
-  [0;34mconfig_profile_name       : [0;32mTest profile[0m
-  [0;34mconfig_profile_description: [0;32mMinimal test dataset to check pipeline function[0m
-
-!! Only displaying parameters that differ from the pipeline defaults !!
--[2m----------------------------------------------------[0m-
-May-09 17:19:06.771 [main] INFO  nextflow.Nextflow - If you use nf-core-bagobugs for your analysis please cite:
-
-* The nf-core framework
-  https://doi.org/10.1038/s41587-020-0439-x
-
-* Software dependencies
-  https://github.com/nf-core-bagobugs/blob/master/CITATIONS.md
-May-09 17:19:06.773 [main] INFO  nextflow.Nextflow - -[2m----------------------------------------------------[0m-
-May-09 17:19:07.456 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
-  Script_f5da081cb7410bcd: /home/acuacal/.nextflow/assets/nibscbioinformatics/nf-core-bagobugs/main.nf
-  Script_99fbeecd12a132da: /home/acuacal/.nextflow/assets/nibscbioinformatics/nf-core-bagobugs/./workflows/bagobugs.nf
-May-09 17:19:07.456 [main] DEBUG nextflow.Session - Session aborted -- Cause: /home/acuacal/project/shotgun-nf-portfolio/db/metaphlan_test_db
-May-09 17:19:07.459 [main] DEBUG nextflow.Session - 
-Thread[#9,Reference Handler,10,system]
-  java.base@21.0.7/java.lang.ref.Reference.waitForReferencePendingList(Native Method)
-  java.base@21.0.7/java.lang.ref.Reference.processPendingReferences(Reference.java:246)
-  java.base@21.0.7/java.lang.ref.Reference$ReferenceHandler.run(Reference.java:208)
-
-Thread[#11,Signal Dispatcher,9,system]
-
-Thread[#18,Common-Cleaner,8,InnocuousThreadGroup]
-  java.base@21.0.7/jdk.internal.misc.Unsafe.park(Native Method)
-  java.base@21.0.7/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
-  java.base@21.0.7/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
-  java.base@21.0.7/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:71)
-  java.base@21.0.7/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:143)
-  java.base@21.0.7/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:218)
-  java.base@21.0.7/jdk.internal.ref.CleanerImpl.run(CleanerImpl.java:140)
-  java.base@21.0.7/java.lang.Thread.runWith(Thread.java:1596)
-  java.base@21.0.7/java.lang.Thread.run(Thread.java:1583)
-  java.base@21.0.7/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:186)
-
-Thread[#31,process reaper,10,InnocuousThreadGroup]
-  java.base@21.0.7/jdk.internal.misc.Unsafe.park(Native Method)
-  java.base@21.0.7/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:410)
-  java.base@21.0.7/java.util.concurrent.LinkedTransferQueue$DualNode.await(LinkedTransferQueue.java:452)
-  java.base@21.0.7/java.util.concurrent.SynchronousQueue$Transferer.xferLifo(SynchronousQueue.java:194)
-  java.base@21.0.7/java.util.concurrent.SynchronousQueue.xfer(SynchronousQueue.java:235)
-  java.base@21.0.7/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:338)
-  java.base@21.0.7/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1069)
-  java.base@21.0.7/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-  java.base@21.0.7/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-  java.base@21.0.7/java.lang.Thread.runWith(Thread.java:1596)
-  java.base@21.0.7/java.lang.Thread.run(Thread.java:1583)
-  java.base@21.0.7/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:186)
-
-Thread[#40,AnsiLogObserver,5,main]
+Thread[#32,AnsiLogObserver,5,main]
   java.base@21.0.7/java.lang.Object.wait0(Native Method)
   java.base@21.0.7/java.lang.Object.wait(Object.java:366)
   app//nextflow.trace.AnsiLogObserver.render0(AnsiLogObserver.groovy:185)
   java.base@21.0.7/java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual(DirectMethodHandle$Holder)
-  java.base@21.0.7/java.lang.invoke.LambdaForm$MH/0x00007f5ce43a6800.invoke(LambdaForm$MH)
+  java.base@21.0.7/java.lang.invoke.LambdaForm$MH/0x00007f56a42b3800.invoke(LambdaForm$MH)
   java.base@21.0.7/java.lang.invoke.Invokers$Holder.invokeExact_MT(Invokers$Holder)
   java.base@21.0.7/jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl(DirectMethodHandleAccessor.java:154)
   java.base@21.0.7/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -151,15 +85,53 @@ Thread[#40,AnsiLogObserver,5,main]
   java.base@21.0.7/java.lang.Thread.runWith(Thread.java:1596)
   java.base@21.0.7/java.lang.Thread.run(Thread.java:1583)
 
-Thread[#38,Thread-4,5,main]
+Thread[#18,Common-Cleaner,8,InnocuousThreadGroup]
+  java.base@21.0.7/jdk.internal.misc.Unsafe.park(Native Method)
+  java.base@21.0.7/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+  java.base@21.0.7/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+  java.base@21.0.7/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:71)
+  java.base@21.0.7/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:143)
+  java.base@21.0.7/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:218)
+  java.base@21.0.7/jdk.internal.ref.CleanerImpl.run(CleanerImpl.java:140)
+  java.base@21.0.7/java.lang.Thread.runWith(Thread.java:1596)
+  java.base@21.0.7/java.lang.Thread.run(Thread.java:1583)
+  java.base@21.0.7/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:186)
+
+Thread[#11,Signal Dispatcher,9,system]
+
+Thread[#30,process reaper,10,InnocuousThreadGroup]
+  java.base@21.0.7/jdk.internal.misc.Unsafe.park(Native Method)
+  java.base@21.0.7/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:410)
+  java.base@21.0.7/java.util.concurrent.LinkedTransferQueue$DualNode.await(LinkedTransferQueue.java:452)
+  java.base@21.0.7/java.util.concurrent.SynchronousQueue$Transferer.xferLifo(SynchronousQueue.java:194)
+  java.base@21.0.7/java.util.concurrent.SynchronousQueue.xfer(SynchronousQueue.java:235)
+  java.base@21.0.7/java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:338)
+  java.base@21.0.7/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1069)
+  java.base@21.0.7/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+  java.base@21.0.7/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+  java.base@21.0.7/java.lang.Thread.runWith(Thread.java:1596)
+  java.base@21.0.7/java.lang.Thread.run(Thread.java:1583)
+  java.base@21.0.7/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:186)
+
+Thread[#1,main,5,main]
+  java.base@21.0.7/java.lang.Thread.dumpThreads(Native Method)
+  java.base@21.0.7/java.lang.Thread.getAllStackTraces(Thread.java:2522)
+  app//nextflow.util.SysHelper.dumpThreads(SysHelper.groovy:188)
+  app//nextflow.Session.abort(Session.groovy:800)
+  app//nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:149)
+  app//nextflow.cli.CmdRun.run(CmdRun.groovy:376)
+  app//nextflow.cli.Launcher.run(Launcher.groovy:503)
+  app//nextflow.cli.Launcher.main(Launcher.groovy:658)
+
+Thread[#31,Thread-1,5,main]
   java.base@21.0.7/jdk.internal.misc.Unsafe.park(Native Method)
   java.base@21.0.7/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
   java.base@21.0.7/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1763)
   java.base@21.0.7/java.util.concurrent.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:515)
   java.base@21.0.7/java.util.concurrent.LinkedBlockingDeque.poll(LinkedBlockingDeque.java:677)
   app//nextflow.util.SimpleAgent.run(SimpleAgent.groovy:89)
-  java.base@21.0.7/java.lang.invoke.LambdaForm$DMH/0x00007f5ce41a3000.invokeVirtual(LambdaForm$DMH)
-  java.base@21.0.7/java.lang.invoke.LambdaForm$MH/0x00007f5ce4488000.invoke(LambdaForm$MH)
+  java.base@21.0.7/java.lang.invoke.LambdaForm$DMH/0x00007f56a41a8400.invokeVirtual(LambdaForm$DMH)
+  java.base@21.0.7/java.lang.invoke.LambdaForm$MH/0x00007f56a4303c00.invoke(LambdaForm$MH)
   java.base@21.0.7/java.lang.invoke.Invokers$Holder.invokeExact_MT(Invokers$Holder)
   java.base@21.0.7/jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl(DirectMethodHandleAccessor.java:153)
   java.base@21.0.7/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
@@ -178,79 +150,23 @@ Thread[#38,Thread-4,5,main]
   java.base@21.0.7/java.lang.Thread.runWith(Thread.java:1596)
   java.base@21.0.7/java.lang.Thread.run(Thread.java:1583)
 
-Thread[#36,Keep-Alive-Timer,8,InnocuousThreadGroup]
-  java.base@21.0.7/java.lang.Thread.sleep0(Native Method)
-  java.base@21.0.7/java.lang.Thread.sleep(Thread.java:509)
-  java.base@21.0.7/sun.net.www.http.KeepAliveCache.run(KeepAliveCache.java:238)
-  java.base@21.0.7/java.lang.Thread.runWith(Thread.java:1596)
-  java.base@21.0.7/java.lang.Thread.run(Thread.java:1583)
-  java.base@21.0.7/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:186)
+Thread[#9,Reference Handler,10,system]
+  java.base@21.0.7/java.lang.ref.Reference.waitForReferencePendingList(Native Method)
+  java.base@21.0.7/java.lang.ref.Reference.processPendingReferences(Reference.java:246)
+  java.base@21.0.7/java.lang.ref.Reference$ReferenceHandler.run(Reference.java:208)
 
-Thread[#39,Actor Thread 1,5,main]
-  java.base@21.0.7/jdk.internal.misc.Unsafe.park(Native Method)
-  java.base@21.0.7/java.util.concurrent.locks.LockSupport.park(LockSupport.java:371)
-  java.base@21.0.7/java.util.concurrent.LinkedTransferQueue$DualNode.await(LinkedTransferQueue.java:458)
-  java.base@21.0.7/java.util.concurrent.SynchronousQueue$Transferer.xferLifo(SynchronousQueue.java:194)
-  java.base@21.0.7/java.util.concurrent.SynchronousQueue.xfer(SynchronousQueue.java:235)
-  java.base@21.0.7/java.util.concurrent.SynchronousQueue.take(SynchronousQueue.java:318)
-  java.base@21.0.7/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1070)
-  java.base@21.0.7/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-  java.base@21.0.7/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-  java.base@21.0.7/java.lang.Thread.runWith(Thread.java:1596)
-  java.base@21.0.7/java.lang.Thread.run(Thread.java:1583)
-
-Thread[#19,Notification Thread,9,system]
-
-Thread[#1,main,5,main]
-  java.base@21.0.7/java.lang.Thread.dumpThreads(Native Method)
-  java.base@21.0.7/java.lang.Thread.getAllStackTraces(Thread.java:2522)
-  app//nextflow.util.SysHelper.dumpThreads(SysHelper.groovy:188)
-  app//nextflow.Session.abort(Session.groovy:800)
-  app//nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:149)
-  app//nextflow.cli.CmdRun.run(CmdRun.groovy:376)
-  app//nextflow.cli.Launcher.run(Launcher.groovy:503)
-  app//nextflow.cli.Launcher.main(Launcher.groovy:658)
-
-Thread[#10,Finalizer,8,system]
-  java.base@21.0.7/java.lang.Object.wait0(Native Method)
-  java.base@21.0.7/java.lang.Object.wait(Object.java:366)
-  java.base@21.0.7/java.lang.Object.wait(Object.java:339)
-  java.base@21.0.7/java.lang.ref.NativeReferenceQueue.await(NativeReferenceQueue.java:48)
-  java.base@21.0.7/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:158)
-  java.base@21.0.7/java.lang.ref.NativeReferenceQueue.remove(NativeReferenceQueue.java:89)
-  java.base@21.0.7/java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:173)
-
-Thread[#34,JGit-FileStoreAttributeReader-1,5,main]
-  java.base@21.0.7/jdk.internal.misc.Unsafe.park(Native Method)
-  java.base@21.0.7/java.util.concurrent.locks.LockSupport.park(LockSupport.java:371)
-  java.base@21.0.7/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:519)
-  java.base@21.0.7/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3780)
-  java.base@21.0.7/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3725)
-  java.base@21.0.7/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1712)
-  java.base@21.0.7/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
-  java.base@21.0.7/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1070)
-  java.base@21.0.7/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-  java.base@21.0.7/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-  java.base@21.0.7/java.lang.Thread.runWith(Thread.java:1596)
-  java.base@21.0.7/java.lang.Thread.run(Thread.java:1583)
-
-May-09 17:19:07.467 [main] ERROR nextflow.cli.Launcher - /home/acuacal/project/shotgun-nf-portfolio/db/metaphlan_test_db
-java.nio.file.NoSuchFileException: /home/acuacal/project/shotgun-nf-portfolio/db/metaphlan_test_db
-	at nextflow.file.FileHelper.checkIfExists(FileHelper.groovy:1099)
+May-10 17:31:26.436 [main] DEBUG nextflow.cli.Launcher - Operation aborted
+nextflow.exception.AbortOperationException: Missing `fromPath` parameter
+	at nextflow.Channel.fromPath(Channel.groovy:292)
+	at nextflow.Channel.fromPath(Channel.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.invokeStaticMethod(MetaClassImpl.java:1586)
+	at groovy.lang.DelegatingMetaClass.invokeStaticMethod(DelegatingMetaClass.java:173)
 	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
-	at nextflow.Nextflow.file(Nextflow.groovy:123)
-	at org.codehaus.groovy.vmplugin.v8.IndyInterface.selectMethod(IndyInterface.java:355)
-	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
-	at Script_99fbeecd12a132da.runScript(Script_99fbeecd12a132da:19)
-	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
-	at nextflow.script.BaseScript.run0(BaseScript.groovy:159)
-	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
-	at nextflow.script.BaseScript.run(BaseScript.groovy:209)
-	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:236)
-	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:222)
-	at nextflow.script.IncludeDef.memoizedMethodPriv$loadModule0PathMapSession(IncludeDef.groovy:142)
-	at nextflow.script.IncludeDef.access$0(IncludeDef.groovy)
-	at nextflow.script.IncludeDef$__clinit__closure2.doCall(IncludeDef.groovy)
+	at Script_d9efcda044560cc0$_runScript_closure1$_closure4.doCall(Script_d9efcda044560cc0:16)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
@@ -258,16 +174,12 @@ java.nio.file.NoSuchFileException: /home/acuacal/project/shotgun-nf-portfolio/db
 	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:279)
 	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
 	at groovy.lang.Closure.call(Closure.java:433)
-	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.lambda$call$0(Memoize.java:137)
-	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:137)
-	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:113)
-	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.call(Memoize.java:136)
-	at nextflow.script.IncludeDef.loadModule0(IncludeDef.groovy)
-	at nextflow.script.IncludeDef.load0(IncludeDef.groovy:114)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at nextflow.script.WorkflowDef.run0(WorkflowDef.groovy:204)
+	at nextflow.script.WorkflowDef.run(WorkflowDef.groovy:188)
+	at nextflow.script.BindableDef.invoke_a(BindableDef.groovy:51)
 	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
-	at Script_f5da081cb7410bcd.runScript(Script_f5da081cb7410bcd:57)
-	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
-	at nextflow.script.BaseScript.run0(BaseScript.groovy:159)
+	at nextflow.script.BaseScript.run0(BaseScript.groovy:198)
 	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
 	at nextflow.script.BaseScript.run(BaseScript.groovy:209)
 	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:236)

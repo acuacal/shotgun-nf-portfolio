@@ -9,6 +9,7 @@ and referenced with `@` in this chat.
 1. **Read the Error Log**  
    - Open the referenced `@error_log.txt`.  
    - Summarise the root cause in *max three* bullet points.
+   - Search the same folder for any `cw_*.txt` or `nextflow_meta.log` and include relevant snippets in `root_cause.md` evidence.
 
 2. **Write `root_cause.md`**  
    Include:  
