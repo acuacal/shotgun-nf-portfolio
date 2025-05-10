@@ -1,24 +1,5 @@
-# task_list.md
+# Fix Plan for 20250510-initial-test
 
-## 🚀 Quick-start run commands
-- [ ] Run pipeline via `make run slug=initial-test args="-profile docker"`
-  > After each bug-fix, rerun with  
-  > `make run slug=<new-slug> args="-profile docker -resume"`
-
-## 🔨 Implementation tasks
-- [ ] Install Docker Desktop & enable WSL integration
-- [ ] Download mini databases to `~/metadb/`
-- [ ] Add `conf/hybrid.config` for AWS Batch
-- [ ] Verify `nextflow config -profile hybrid` merges correctly
-- [ ] Capture MultiQC & Krona screenshots
-- [ ] Add Makefile targets (setup, demo, ci)
-
-## ✅ Definition of done
-- [ ] Pipeline passes locally (`make run …` returns 0)
-- [ ] Hybrid profile succeeds on AWS Batch
-- [ ] README updated with exact commands & runtimes 
-
-## 🔴 Bug-fixes (20250510-initial-test)
 - [ ] **Initialize `params.input`**: Modify `main.nf` to provide a valid default for `params.input`, such as a path to a test samplesheet or ensure it's always provided via command line. For initial testing, we can use nf-core's built-in test data capabilities if `main.nf` is structured to call nf-core pipelines directly.
 - [ ] **Handle Profile Information Correctly**: 
     - Remove direct usage of `params.profile` within the conceptual process script blocks in `main.nf` if `scripts/run_nf.sh` is already passing the correct `-profile` argument to the `nextflow run` commands for sub-pipelines. 
