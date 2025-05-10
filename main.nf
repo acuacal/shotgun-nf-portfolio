@@ -8,6 +8,7 @@ params.input = '''https://raw.githubusercontent.com/nf-core/test-datasets/module
 params.outdir = 'results'
 params.multiqc_title = "Shotgun Metagenomics Portfolio Pipeline"
 
+/*
 // Include nf-core modules/subworkflows if this were a custom pipeline from scratch
 // For now, we are chaining two full nf-core pipelines.
 
@@ -86,6 +87,7 @@ process FUNCSCAN {
     mkdir results_funcscan // Create dummy output for now
     """
 }
+*/
 
 log.info \"\"\"
          S H O T G U N  M E T A G E N O M I C S     P I P E L I N E
