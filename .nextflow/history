@@ -1,0 +1,2 @@
+2025-05-09 16:41:20	-	adoring_bell	-	b01a11fc234f2763c0b1c4361e780007a1fac8ac	b16fe076-0b1d-4098-a60e-426708a5dec8	nextflow run nibscbioinformatics/nf-core-bagobugs -profile test,docker --outdir ./results_bagobugs_test
+2025-05-09 17:19:02	-	nostalgic_banach	-	b01a11fc234f2763c0b1c4361e780007a1fac8ac	bebc9e53-3030-40e3-bae7-20f86918062b	nextflow run nibscbioinformatics/nf-core-bagobugs -profile test,docker --outdir ./results_bagobugs_test --metaphlan_database ./db/metaphlan_test_db
